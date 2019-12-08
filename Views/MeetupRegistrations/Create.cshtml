@@ -1,0 +1,63 @@
+﻿@model Tech_Meetups_Final_Project.Models.MeetupRegistration
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MeetupRegistration</h4>
+<hr />
+<div class="container">
+    <h1> @Model.Participant.Name Thank You for regsitering with @Model.MeetUp.EventTitle</h1>
+
+    <h3> The details are as follows:</h3>
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetUp.EventTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MeetUp.EventTitle)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Participant.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Participant.Name)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetUp.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MeetUp.Date)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetUp.StartTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MeetUp.StartTime)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MeetUp.EndTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MeetUp.EndTime)
+        </dd>
+
+
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

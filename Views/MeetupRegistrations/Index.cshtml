@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Tech_Meetups_Final_Project.Models.MeetupRegistration>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Meetup Registrations</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Participant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetUp)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Participant.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeetUp.EventTitle)
+                </td>
+                
+                <td>
+                    
+                    <a class="btn btn-outline-dark" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="btn btn-outline-dark" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
